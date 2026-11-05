@@ -5,7 +5,7 @@ s, t = input().split()
 
 V = {}
 G = {}
-#Vertices
+
 for i in range(n):
     vertex = input()
     if "*" in vertex:
@@ -16,7 +16,6 @@ for i in range(n):
         V[vertex] = False
         G[vertex] = []
 
-#Edges
 for i in range(m):
     u, typ, v = input().split(" ")
     if V[u] or V[v]:
@@ -45,6 +44,5 @@ def bfs(start, end):
             if v == end:
                 return path[end]
     return None
-#print(G)
-#print(V)
+
 print(bfs(s, t))
