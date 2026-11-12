@@ -1,0 +1,253 @@
+Found 154 input files in /home/mathias/Documents/Algorithem Design/red-scare-ad-2026/ad-red-scare/data
+A: Compiling /home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/Alternate/sol.cpp
+F: Python (/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/Few/sol.py)
+M: Compiling /home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/Many/sol.cpp
+N: Python (/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py)
+MISSING: /home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/Some/sol.py or sol.cpp
+TIMEOUT F / bht.txt (10s)
+ERROR N / bht.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 12, in <module>
+    v, _ = vertex.split(" ")
+    ^^^^
+ValueError: too many values to unpack (expected 2, got 3)
+TIMEOUT A / common-1-4500.txt (10s)
+TIMEOUT F / common-1-4500.txt (10s)
+TIMEOUT A / common-1-5000.txt (10s)
+TIMEOUT F / common-1-5000.txt (10s)
+TIMEOUT A / common-1-5757.txt (10s)
+TIMEOUT F / common-1-5757.txt (10s)
+TIMEOUT A / common-2-1000.txt (10s)
+TIMEOUT F / common-2-1000.txt (10s)
+TIMEOUT A / common-2-1500.txt (10s)
+TIMEOUT F / common-2-1500.txt (10s)
+TIMEOUT A / common-2-2000.txt (10s)
+TIMEOUT F / common-2-2000.txt (10s)
+TIMEOUT A / common-2-250.txt (10s)
+TIMEOUT A / common-2-2500.txt (10s)
+TIMEOUT F / common-2-2500.txt (10s)
+TIMEOUT A / common-2-3000.txt (10s)
+TIMEOUT F / common-2-3000.txt (10s)
+TIMEOUT M / common-2-3000.txt (10s)
+TIMEOUT A / common-2-3500.txt (10s)
+TIMEOUT F / common-2-3500.txt (10s)
+TIMEOUT M / common-2-3500.txt (10s)
+TIMEOUT A / common-2-4000.txt (10s)
+TIMEOUT F / common-2-4000.txt (10s)
+TIMEOUT M / common-2-4000.txt (10s)
+TIMEOUT A / common-2-4500.txt (10s)
+TIMEOUT F / common-2-4500.txt (10s)
+TIMEOUT M / common-2-4500.txt (10s)
+TIMEOUT A / common-2-500.txt (10s)
+TIMEOUT A / common-2-5000.txt (10s)
+TIMEOUT F / common-2-5000.txt (10s)
+TIMEOUT M / common-2-5000.txt (10s)
+TIMEOUT A / common-2-5757.txt (10s)
+TIMEOUT F / common-2-5757.txt (10s)
+TIMEOUT M / common-2-5757.txt (10s)
+TIMEOUT A / gnm-10-20-0.txt (10s)
+TIMEOUT A / gnm-10-20-1.txt (10s)
+TIMEOUT A / gnm-1000-1500-1.txt (10s)
+TIMEOUT A / gnm-1000-2000-1.txt (10s)
+TIMEOUT A / gnm-2000-3000-1.txt (10s)
+TIMEOUT A / gnm-2000-4000-1.txt (10s)
+TIMEOUT A / gnm-3000-6000-1.txt (10s)
+TIMEOUT A / gnm-4000-6000-0.txt (10s)
+TIMEOUT A / gnm-4000-6000-1.txt (10s)
+TIMEOUT A / gnm-4000-8000-1.txt (10s)
+TIMEOUT A / gnm-5000-10000-0.txt (10s)
+TIMEOUT A / gnm-5000-10000-1.txt (10s)
+TIMEOUT A / grid-10-0.txt (10s)
+TIMEOUT A / grid-10-1.txt (10s)
+TIMEOUT A / grid-10-2.txt (10s)
+TIMEOUT A / grid-25-0.txt (10s)
+TIMEOUT A / grid-25-1.txt (10s)
+TIMEOUT A / grid-25-2.txt (10s)
+TIMEOUT A / grid-5-0.txt (10s)
+TIMEOUT A / grid-5-1.txt (10s)
+TIMEOUT A / grid-5-2.txt (10s)
+TIMEOUT A / grid-50-0.txt (10s)
+TIMEOUT A / grid-50-1.txt (10s)
+TIMEOUT A / grid-50-2.txt (10s)
+ERROR N / increase-n10-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '6'
+ERROR N / increase-n10-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '8'
+ERROR N / increase-n10-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '14'
+ERROR N / increase-n100-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '98'
+ERROR N / increase-n100-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '10'
+ERROR N / increase-n100-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '186'
+ERROR N / increase-n20-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '34'
+ERROR N / increase-n20-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '30'
+ERROR N / increase-n20-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '10'
+ERROR N / increase-n50-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '30'
+ERROR N / increase-n50-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '32'
+ERROR N / increase-n50-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '20'
+TIMEOUT F / increase-n500-1.txt (10s)
+ERROR N / increase-n500-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '406'
+TIMEOUT F / increase-n500-2.txt (10s)
+ERROR N / increase-n500-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '356'
+TIMEOUT F / increase-n500-3.txt (10s)
+ERROR N / increase-n500-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '98'
+ERROR N / increase-n8-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '2'
+ERROR N / increase-n8-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '8'
+ERROR N / increase-n8-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '8'
+TIMEOUT F / rusty-2-2000.txt (10s)
+TIMEOUT F / rusty-2-2500.txt (10s)
+TIMEOUT F / rusty-2-3000.txt (10s)
+TIMEOUT F / rusty-2-3500.txt (10s)
+TIMEOUT M / rusty-2-3500.txt (10s)
+TIMEOUT F / rusty-2-4000.txt (10s)
+TIMEOUT M / rusty-2-4000.txt (10s)
+TIMEOUT F / rusty-2-4500.txt (10s)
+TIMEOUT M / rusty-2-4500.txt (10s)
+TIMEOUT F / rusty-2-5000.txt (10s)
+TIMEOUT M / rusty-2-5000.txt (10s)
+TIMEOUT F / rusty-2-5757.txt (10s)
+TIMEOUT M / rusty-2-5757.txt (10s)
+ERROR N / ski-illustration.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level10-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '2'
+ERROR N / ski-level10-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level10-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level20-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level20-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level20-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level3-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '1'
+ERROR N / ski-level3-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level3-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level5-1.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level5-2.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+ERROR N / ski-level5-3.txt (exit 1): Traceback (most recent call last):
+  File "/home/mathias/Documents/Algorithem Design/red-scare-ad-2026/solutions/None/sol.py", line 21, in <module>
+    if V[u] or V[v]:
+       ~^^^
+KeyError: '0'
+TIMEOUT A / smallworld-10-1.txt (10s)
+TIMEOUT A / smallworld-20-1.txt (10s)
+TIMEOUT A / smallworld-3-0.txt (10s)
+TIMEOUT F / smallworld-30-0.txt (10s)
+TIMEOUT A / smallworld-30-1.txt (10s)
+TIMEOUT F / smallworld-40-0.txt (10s)
+TIMEOUT A / smallworld-40-1.txt (10s)
+TIMEOUT F / smallworld-50-0.txt (10s)
+TIMEOUT A / smallworld-50-1.txt (10s)
+TIMEOUT M / wall-n-10000.txt (10s)
+TIMEOUT M / wall-p-10000.txt (10s)
+TIMEOUT M / wall-z-10000.txt (10s)
