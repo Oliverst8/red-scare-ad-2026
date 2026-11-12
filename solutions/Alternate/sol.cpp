@@ -26,10 +26,10 @@ int main() {
 	for (int c = 0; c < n; c++) {
 		getline(cin, inp);
 		red = false;
-		size_t spaceIndex = 0;
-		if ((spaceIndex = inp.find(" ")) != std::string::npos) {
+		size_t starIndex = 0;
+		if ((starIndex = inp.find("*")) != std::string::npos) {
 			red = true;
-			node = inp.substr(0, spaceIndex);
+			node = inp.substr(0, starIndex - 1);
 		} else {
 			node = inp;
 		}
