@@ -22,21 +22,22 @@ const int INF = INT_MAX;
 
 // BellmanFord implemented from
 // https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
-int many(unordered_map<string, unordered_map<string, int>> &edges, int n,
-         const string s, const string t, vector<string> verticies) {
-  unordered_map<string, int> dist;
+int many(vector<unordered_map<int, int>> &edges, int n, const int s,
+         const int t) {
 
-  for (const auto &vertex : verticies) {
-    dist[vertex] = INF;
+  vector<int> dist(n);
+
+  for (int i = 0; i < n; i++) {
+    dist[i] = INF;
   }
 
   dist[s] = 0;
 
   for (int i = 0; i < n - 1; i++) {
-    for (const auto &vertex : edges) {
-      const string u = vertex.first;
-      for (const auto &to : vertex.second) {
-        const string v = to.first;
+    for (int j = 0; j < edges.size(); j++) {
+      const int u = j;
+      for (const auto &to : edges[j]) {
+        const int v = to.first;
         const int w = to.second;
         if (dist[u] + w < dist[v] and dist[u] != INF) {
           dist[v] = dist[u] + w;
@@ -46,10 +47,10 @@ int many(unordered_map<string, unordered_map<string, int>> &edges, int n,
     }
   }
 
-  for (const auto &vertex : edges) {
-    string u = vertex.first;
-    for (const auto &to : vertex.second) {
-      string v = to.first;
+  for (int j = 0; j < edges.size(); j++) {
+    const int u = j;
+    for (const auto &to : edges[j]) {
+      int v = to.first;
       int w = to.second;
       if (dist[u] != INF and dist[u] + w < dist[v]) {
         dbg("HERE");
@@ -62,18 +63,17 @@ int many(unordered_map<string, unordered_map<string, int>> &edges, int n,
 }
 
 // Taken from openpitmining solution
-ll edmonsKarp(unordered_map<string, unordered_map<string, int>> &edges, int N,
-              string s, string t) {
+ll edmonsKarp(vector<unordered_map<int, int>> &edges, int N, int s, int t) {
   ll sum = 0;
   dbg(edges);
 
   while (true) {
-    queue<tuple<string, string, int>> st;
+    queue<tuple<int, int, int>> st;
     st.push({s, s, INF});
-    unordered_set<string> visited;
-    unordered_map<string, string> parent;
+    unordered_set<int> visited;
+    unordered_map<int, int> parent;
     int mn = INF;
-    string sinkPar = "";
+    int sinkPar = INT_MIN;
     while (st.size() > 0) {
       auto cur = st.front();
       st.pop();
@@ -101,7 +101,7 @@ ll edmonsKarp(unordered_map<string, unordered_map<string, int>> &edges, int N,
       }
     }
     // dbg(sinkPar);
-    if (mn == INF or sinkPar == "") {
+    if (mn == INF or sinkPar == INT_MIN) {
       break;
     }
 
@@ -126,13 +126,13 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   int n, m, r;
   cin >> n >> m >> r;
-  string s, t;
-  cin >> s >> t;
-  unordered_map<string, bool> isRed;
+  string sIn, tIn;
+  cin >> sIn >> tIn;
+  vector<bool> isRed(n);
   cin >> ws;
   string node, inp;
   bool red;
-  vector<string> verticies;
+  unordered_map<string, int> convert;
   for (int c = 0; c < n; c++) {
     getline(cin, inp);
     red = false;
@@ -143,17 +143,23 @@ int main() {
     } else {
       node = inp;
     }
-    verticies.push_back(node);
-    isRed[node] = red;
+    convert[node] = c;
+    isRed[c] = red;
   }
+  int s = convert[sIn];
+  int t = convert[tIn];
   dbg(isRed);
 
-  unordered_map<string, unordered_map<string, int>> edges;
-  string u, v, edge;
+  vector<unordered_map<int, int>> edges(n);
+  int u, v;
+  string uIn, vIn, edge;
+
   bool directed = true;
 
   for (int c = 0; c < m; c++) {
-    cin >> u >> edge >> v;
+    cin >> uIn >> edge >> vIn;
+    u = convert[uIn];
+    v = convert[vIn];
 
     if (edge == "--") {
       directed = false;
@@ -164,7 +170,7 @@ int main() {
   }
 
   if (directed) {
-    auto res = many(edges, n, s, t, verticies);
+    auto res = many(edges, n, s, t);
     dbg(res);
     if (res == -2) {
       cout << '?';
@@ -173,25 +179,26 @@ int main() {
       cout << (res > 0 ? "true" : "false");
     }
   } else {
-    for (auto &[u, neighbors] : edges)
-      for (auto &[v, w] : neighbors)
+
+    for (int u = 0; u < n; u++)
+      for (auto &[v, w] : edges[u])
         w = 1;
-    unordered_map<string, unordered_map<string, int>> graph;
-    for (auto &[u, neighbors] : edges) {
-      const string uOut = u + "Ø";
+    vector<unordered_map<int, int>> graph(2 * n + 2);
+    for (int u = 0; u < n; u++) {
+      const int uOut = u + n;
       graph[u][uOut] = 1;
-      graph[uOut] = neighbors;
+      graph[uOut] = edges[u];
     }
 
-    const string sMark = "Ø";
-    const string tMark = "Å";
+    const int sMark = 2 * n;
+    const int tMark = 2 * n + 1;
     graph[sMark][s] = 1;
     graph[s][sMark] = 1;
     graph[sMark][t] = 1;
     graph[t][sMark] = 1;
 
-    for (auto &[v, red] : isRed) {
-      if (not red)
+    for (int v = 0; v < n; v++) {
+      if (not isRed[v])
         continue;
 
       auto g = graph;
@@ -200,9 +207,10 @@ int main() {
       g[v][tMark] = 2;
 
       auto res = edmonsKarp(g, n, sMark, tMark);
-      cout << (res == 2 ? "true" : "false");
-      if (res == 2)
+      if (res == 2) {
+        cout << "true";
         return 0;
+      }
     }
     cout << "false";
   }

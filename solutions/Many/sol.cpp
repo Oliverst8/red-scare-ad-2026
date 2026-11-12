@@ -21,21 +21,20 @@ const int INF = INT_MAX;
 
 // BellmanFord implemented from
 // https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
-int many(unordered_map<string, vector<pair<string, int>>> &edges, int n,
-         const string s, const string t, vector<string> verticies) {
-  unordered_map<string, int> dist;
+int many(vector<vector<pair<int, int>>> &edges, int n, const int s,
+         const int t) {
+  vector<int> dist(n);
 
-  for (const auto &vertex : verticies) {
-    dist[vertex] = INF;
+  for (int i = 0; i < n; i++) {
+    dist[i] = INF;
   }
 
   dist[s] = 0;
 
   for (int i = 0; i < n - 1; i++) {
-    for (const auto &vertex : edges) {
-      const string u = vertex.first;
-      for (const auto &to : vertex.second) {
-        const string v = to.first;
+    for (int u = 0; u < edges.size(); u++) {
+      for (const auto &to : edges[u]) {
+        const int v = to.first;
         const int w = to.second;
         if (dist[u] + w < dist[v] and dist[u] != INF) {
           dist[v] = dist[u] + w;
@@ -45,10 +44,9 @@ int many(unordered_map<string, vector<pair<string, int>>> &edges, int n,
     }
   }
 
-  for (const auto &vertex : edges) {
-    string u = vertex.first;
-    for (const auto &to : vertex.second) {
-      string v = to.first;
+  for (int u = 0; u < edges.size(); u++) {
+    for (const auto &to : edges[u]) {
+      int v = to.first;
       int w = to.second;
       if (dist[u] != INF and dist[u] + w < dist[v]) {
         dbg("HERE");
@@ -64,13 +62,13 @@ int main() {
   cin.tie(0)->sync_with_stdio(0);
   int n, m, r;
   cin >> n >> m >> r;
-  string s, t;
-  cin >> s >> t;
-  unordered_map<string, bool> isRed;
+  string sIn, tIn;
+  cin >> sIn >> tIn;
+  vector<bool> isRed(n);
   cin >> ws;
   string node, inp;
   bool red;
-  vector<string> verticies;
+  unordered_map<string, int> convert;
   for (int c = 0; c < n; c++) {
     getline(cin, inp);
     red = false;
@@ -81,16 +79,21 @@ int main() {
     } else {
       node = inp;
     }
-    verticies.push_back(node);
-    isRed[node] = red;
+    convert[node] = c;
+    isRed[c] = red;
   }
+  int s = convert[sIn];
+  int t = convert[tIn];
   dbg(isRed);
 
-  unordered_map<string, vector<pair<string, int>>> edges;
-  string u, v, edge;
+  vector<vector<pair<int, int>>> edges(n);
+  int u, v;
+  string uIn, vIn, edge;
 
   for (int c = 0; c < m; c++) {
-    cin >> u >> edge >> v;
+    cin >> uIn >> edge >> vIn;
+    u = convert[uIn];
+    v = convert[vIn];
 
     if (edge == "--")
       edges[v].push_back({u, isRed[v] ? -1 : 0});
@@ -98,7 +101,7 @@ int main() {
     edges[u].push_back({v, isRed[u] ? -1 : 0});
   }
 
-  auto res = many(edges, n, s, t, verticies);
+  auto res = many(edges, n, s, t);
   dbg(res);
   if (res == -2) {
     cout << '?';
