@@ -106,7 +106,7 @@ int main() {
   if (res == -2) {
     cout << '?';
   } else {
-    res += isRed[t] ? 1 : 0;
+    res += isRed[t] and res >= 0 ? 1 : 0;
     cout << res;
   }
 }
