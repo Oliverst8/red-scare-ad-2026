@@ -3,6 +3,7 @@
 #include <ranges>
 #include <stack>
 #include <unordered_map>
+#include <unordered_set>
 using namespace std;
 
 #ifdef LOCAL
@@ -54,14 +55,18 @@ int main() {
 	stack<string> st;
 	st.push(s);
 	bool found_path = false;
+	unordered_set<string> visited;
 	while (not st.empty() and not found_path) {
 		string cur = st.top();
+		visited.insert(cur);
 		st.pop();
 		for (auto edge : edges[cur]) {
 			if (edge == t) {
 				found_path = true;
 				break;
 			}
+			if (visited.contains(edge))
+				continue;
 			st.push(edge);
 		}
 	}
