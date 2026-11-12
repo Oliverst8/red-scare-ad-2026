@@ -18,7 +18,7 @@ for i in range(n):
 
 for i in range(m):
     u, typ, v = input().split(" ")
-    if V[u] or V[v]:
+    if (V[u] and u not in (s,t)) or (V[v] and v not in (s,t)):
         continue
     G[u].append(v)
     if typ[1] != '>':
