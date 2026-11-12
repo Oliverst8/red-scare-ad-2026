@@ -26,7 +26,7 @@ for i in range(m):
     u, typ, v = input().split(" ")
     if typ == "->":
         directed = True
-        if u in R:
+        if v in R:
             Edges.append((u, v, -1))
         else:
             Edges.append((u, v, 0))
@@ -36,11 +36,11 @@ for i in range(m):
 
 
 def bellman_ford(Dist, Edges):
-    Dist[s] = 0
+    Dist[s] = -1 if s in R else 0
 
     for i in range(n):
         for u, v, w in Edges:
-            if Dist[u] + w < Dist[v]:
+            if Dist[u] != 1 and Dist[u] + w < Dist[v]:
                 if i == n-1:
                     print("contains negative cycle")
                     exit(0)
