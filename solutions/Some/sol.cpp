@@ -19,18 +19,15 @@ using ll = long long;
 #endif
 
 const int INF = INT_MAX;
-const int null = -1;
 
 // BellmanFord implemented from
 // https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 int many(unordered_map<string, unordered_map<string, int>> &edges, int n,
-         const string s, const string t) {
+         const string s, const string t, vector<string> verticies) {
   unordered_map<string, int> dist;
-  unordered_map<string, string> predecessor;
 
-  for (const auto &vertex : edges) {
-    dist[vertex.first] = INF;
-    predecessor[vertex.first] = null;
+  for (const auto &vertex : verticies) {
+    dist[vertex] = INF;
   }
 
   dist[s] = 0;
@@ -41,10 +38,9 @@ int many(unordered_map<string, unordered_map<string, int>> &edges, int n,
       for (const auto &to : vertex.second) {
         const string v = to.first;
         const int w = to.second;
-        if (dist[u] + w < dist[v]) {
+        if (dist[u] + w < dist[v] and dist[u] != INF) {
           dist[v] = dist[u] + w;
           dbg(u, v, w, dist[v]);
-          predecessor[v] = u;
         }
       }
     }
@@ -55,7 +51,7 @@ int many(unordered_map<string, unordered_map<string, int>> &edges, int n,
     for (const auto &to : vertex.second) {
       string v = to.first;
       int w = to.second;
-      if (dist[u] + w < dist[v]) {
+      if (dist[u] != INF and dist[u] + w < dist[v]) {
         dbg("HERE");
         return -2;
       }
@@ -136,6 +132,7 @@ int main() {
   cin >> ws;
   string node, inp;
   bool red;
+  vector<string> verticies;
   for (int c = 0; c < n; c++) {
     getline(cin, inp);
     red = false;
@@ -146,6 +143,7 @@ int main() {
     } else {
       node = inp;
     }
+    verticies.push_back(node);
     isRed[node] = red;
   }
   dbg(isRed);
@@ -166,7 +164,7 @@ int main() {
   }
 
   if (directed) {
-    auto res = many(edges, n, s, t);
+    auto res = many(edges, n, s, t, verticies);
     dbg(res);
     if (res == -2) {
       cout << '?';
@@ -178,26 +176,33 @@ int main() {
     for (auto &[u, neighbors] : edges)
       for (auto &[v, w] : neighbors)
         w = 1;
+    unordered_map<string, unordered_map<string, int>> graph;
+    for (auto &[u, neighbors] : edges) {
+      const string uOut = u + "Ø";
+      graph[u][uOut] = 1;
+      graph[uOut] = neighbors;
+    }
 
     const string sMark = "Ø";
     const string tMark = "Å";
-    edges[sMark][s] = 1;
-    edges[s][sMark] = 1;
-    edges[sMark][t] = 1;
-    edges[t][sMark] = 1;
+    graph[sMark][s] = 1;
+    graph[s][sMark] = 1;
+    graph[sMark][t] = 1;
+    graph[t][sMark] = 1;
 
     for (auto &[v, red] : isRed) {
       if (not red)
         continue;
 
-      auto g = edges;
+      auto g = graph;
 
       g[tMark][v] = 2;
       g[v][tMark] = 2;
 
       auto res = edmonsKarp(g, n, sMark, tMark);
-      cout << (res > 0 ? "true" : "false");
-      return 0;
+      cout << (res == 2 ? "true" : "false");
+      if (res == 2)
+        return 0;
     }
     cout << "false";
   }

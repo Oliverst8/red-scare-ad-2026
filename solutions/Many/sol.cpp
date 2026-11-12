@@ -18,18 +18,15 @@ using namespace std;
 #endif
 
 const int INF = INT_MAX;
-const int null = -1;
 
 // BellmanFord implemented from
 // https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 int many(unordered_map<string, vector<pair<string, int>>> &edges, int n,
-         const string s, const string t) {
+         const string s, const string t, vector<string> verticies) {
   unordered_map<string, int> dist;
-  unordered_map<string, string> predecessor;
 
-  for (const auto &vertex : edges) {
-    dist[vertex.first] = INF;
-    predecessor[vertex.first] = null;
+  for (const auto &vertex : verticies) {
+    dist[vertex] = INF;
   }
 
   dist[s] = 0;
@@ -40,10 +37,9 @@ int many(unordered_map<string, vector<pair<string, int>>> &edges, int n,
       for (const auto &to : vertex.second) {
         const string v = to.first;
         const int w = to.second;
-        if (dist[u] + w < dist[v]) {
+        if (dist[u] + w < dist[v] and dist[u] != INF) {
           dist[v] = dist[u] + w;
           dbg(u, v, w, dist[v]);
-          predecessor[v] = u;
         }
       }
     }
@@ -54,7 +50,7 @@ int many(unordered_map<string, vector<pair<string, int>>> &edges, int n,
     for (const auto &to : vertex.second) {
       string v = to.first;
       int w = to.second;
-      if (dist[u] + w < dist[v]) {
+      if (dist[u] != INF and dist[u] + w < dist[v]) {
         dbg("HERE");
         return -2;
       }
@@ -74,6 +70,7 @@ int main() {
   cin >> ws;
   string node, inp;
   bool red;
+  vector<string> verticies;
   for (int c = 0; c < n; c++) {
     getline(cin, inp);
     red = false;
@@ -84,6 +81,7 @@ int main() {
     } else {
       node = inp;
     }
+    verticies.push_back(node);
     isRed[node] = red;
   }
   dbg(isRed);
@@ -100,7 +98,7 @@ int main() {
     edges[u].push_back({v, isRed[u] ? -1 : 0});
   }
 
-  auto res = many(edges, n, s, t);
+  auto res = many(edges, n, s, t, verticies);
   dbg(res);
   if (res == -2) {
     cout << '?';
