@@ -29,7 +29,7 @@ for i in range(m):
     else:
         G[line[0]].add((1 if line[2] in R else 0, line[2]))
 
-print(G)
+# print(G)
 
 queue = []
 heapq.heapify(queue)
@@ -37,7 +37,7 @@ heapq.heapify(queue)
 count = 1 if s in R else 0
 
 for e in G[s]:
-    print(e)
+    # print(e)
     heapq.heappush(queue, (e[0] + count, e[1]))
 
 visited = set()
