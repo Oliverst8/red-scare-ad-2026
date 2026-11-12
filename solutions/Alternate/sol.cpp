@@ -3,6 +3,7 @@
 #include <ranges>
 #include <stack>
 #include <unordered_map>
+#include <unordered_set>
 using namespace std;
 
 #ifdef LOCAL
@@ -26,10 +27,10 @@ int main() {
 	for (int c = 0; c < n; c++) {
 		getline(cin, inp);
 		red = false;
-		size_t spaceIndex = 0;
-		if ((spaceIndex = inp.find(" ")) != std::string::npos) {
+		size_t starIndex = 0;
+		if ((starIndex = inp.find("*")) != std::string::npos) {
 			red = true;
-			node = inp.substr(0, spaceIndex);
+			node = inp.substr(0, starIndex - 1);
 		} else {
 			node = inp;
 		}
@@ -54,14 +55,18 @@ int main() {
 	stack<string> st;
 	st.push(s);
 	bool found_path = false;
+	unordered_set<string> visited;
 	while (not st.empty() and not found_path) {
 		string cur = st.top();
+		visited.insert(cur);
 		st.pop();
 		for (auto edge : edges[cur]) {
 			if (edge == t) {
 				found_path = true;
 				break;
 			}
+			if (visited.contains(edge))
+				continue;
 			st.push(edge);
 		}
 	}
