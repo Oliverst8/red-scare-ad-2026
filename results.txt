@@ -1,7 +1,7 @@
 instance	n	A	F	M	N	S
 G-ex	8	true	0	INVALID	3	true
 P3	3	true	1	INVALID	-1	true
-bht	5757	false	TIMEOUT	0	ERROR: ValueError: too many values to unpack (expected 2, got 3)	false
+bht	5757	false	TIMEOUT	0	6	false
 common-1-100	100	false	0	-1	-1	false
 common-1-1000	1000	false	0	-1	-1	false
 common-1-1500	1500	false	0	-1	-1	false
@@ -69,24 +69,24 @@ grid-5-2	25	true	1	INVALID	-1	true
 grid-50-0	2500	false	0	INVALID	1249	true
 grid-50-1	2500	false	0	INVALID	521	true
 grid-50-2	2500	false	11	INVALID	-1	true
-increase-n10-1	10	true	1	INVALID	ERROR: KeyError: '6'	INVALID
-increase-n10-2	10	false	2	INVALID	ERROR: KeyError: '8'	INVALID
-increase-n10-3	10	false	1	INVALID	ERROR: KeyError: '14'	INVALID
-increase-n100-1	100	true	2	INVALID	ERROR: KeyError: '98'	INVALID
-increase-n100-2	100	false	2	INVALID	ERROR: KeyError: '10'	INVALID
-increase-n100-3	100	false	3	INVALID	ERROR: KeyError: '186'	INVALID
-increase-n20-1	20	false	3	INVALID	ERROR: KeyError: '34'	INVALID
-increase-n20-2	20	false	1	INVALID	ERROR: KeyError: '30'	INVALID
-increase-n20-3	20	true	2	INVALID	ERROR: KeyError: '10'	INVALID
-increase-n50-1	50	false	3	INVALID	ERROR: KeyError: '30'	INVALID
-increase-n50-2	50	true	1	INVALID	ERROR: KeyError: '32'	INVALID
-increase-n50-3	50	true	1	INVALID	ERROR: KeyError: '20'	INVALID
-increase-n500-1	500	false	TIMEOUT	INVALID	ERROR: KeyError: '406'	INVALID
-increase-n500-2	500	true	TIMEOUT	INVALID	ERROR: KeyError: '356'	INVALID
-increase-n500-3	500	true	TIMEOUT	INVALID	ERROR: KeyError: '98'	INVALID
-increase-n8-1	8	true	1	INVALID	ERROR: KeyError: '2'	INVALID
-increase-n8-2	8	false	1	INVALID	ERROR: KeyError: '12'	INVALID
-increase-n8-3	8	true	0	INVALID	ERROR: KeyError: '8'	INVALID
+increase-n10-1	10	true	1	INVALID	1	INVALID
+increase-n10-2	10	false	2	INVALID	1	INVALID
+increase-n10-3	10	false	1	INVALID	-1	INVALID
+increase-n100-1	100	true	2	INVALID	-1	INVALID
+increase-n100-2	100	false	2	INVALID	1	INVALID
+increase-n100-3	100	false	3	INVALID	-1	INVALID
+increase-n20-1	20	false	3	INVALID	-1	INVALID
+increase-n20-2	20	false	1	INVALID	1	INVALID
+increase-n20-3	20	true	2	INVALID	-1	INVALID
+increase-n50-1	50	false	3	INVALID	-1	INVALID
+increase-n50-2	50	true	1	INVALID	1	INVALID
+increase-n50-3	50	true	1	INVALID	1	INVALID
+increase-n500-1	500	false	TIMEOUT	INVALID	1	INVALID
+increase-n500-2	500	true	TIMEOUT	INVALID	1	INVALID
+increase-n500-3	500	true	TIMEOUT	INVALID	1	INVALID
+increase-n8-1	8	true	1	INVALID	1	INVALID
+increase-n8-2	8	false	1	INVALID	1	INVALID
+increase-n8-3	8	true	0	INVALID	1	INVALID
 rusty-1-17	17	false	0	INVALID	10	true
 rusty-1-2000	2000	false	0	-1	-1	false
 rusty-1-2500	2500	false	0	-1	-1	false
@@ -104,19 +104,19 @@ rusty-2-4000	4000	false	TIMEOUT	INVALID	4	true
 rusty-2-4500	4500	false	TIMEOUT	INVALID	4	true
 rusty-2-5000	5000	false	TIMEOUT	INVALID	4	true
 rusty-2-5757	5757	false	TIMEOUT	INVALID	4	true
-ski-illustration	36	true	0	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level10-1	79	true	0	INVALID	ERROR: KeyError: '2'	INVALID
-ski-level10-2	76	true	1	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level10-3	77	true	4	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level20-1	252	true	3	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level20-2	253	true	9	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level20-3	254	true	0	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level3-1	16	false	1	INVALID	ERROR: KeyError: '1'	INVALID
-ski-level3-2	14	true	0	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level3-3	15	true	0	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level5-1	29	true	1	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level5-2	26	true	1	INVALID	ERROR: KeyError: '0'	INVALID
-ski-level5-3	27	false	0	0	ERROR: KeyError: '0'	false
+ski-illustration	36	true	0	INVALID	8	INVALID
+ski-level10-1	79	true	0	INVALID	-1	INVALID
+ski-level10-2	76	true	1	INVALID	-1	INVALID
+ski-level10-3	77	true	4	INVALID	-1	INVALID
+ski-level20-1	252	true	3	INVALID	-1	INVALID
+ski-level20-2	253	true	9	INVALID	-1	INVALID
+ski-level20-3	254	true	0	INVALID	-1	INVALID
+ski-level3-1	16	false	1	INVALID	5	INVALID
+ski-level3-2	14	true	0	INVALID	5	INVALID
+ski-level3-3	15	true	0	INVALID	5	INVALID
+ski-level5-1	29	true	1	INVALID	-1	INVALID
+ski-level5-2	26	true	1	INVALID	-1	INVALID
+ski-level5-3	27	false	0	0	7	false
 smallworld-10-0	100	false	0	INVALID	6	true
 smallworld-10-1	100	true	0	INVALID	8	true
 smallworld-20-0	400	false	0	INVALID	8	true

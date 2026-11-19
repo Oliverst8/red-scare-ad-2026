@@ -7,9 +7,9 @@ V = {}
 G = {}
 
 for i in range(n):
-    vertex = input()
+    vertex = input().strip()
     if "*" in vertex:
-        v, _ = vertex.split(" ")
+        v, *_ = vertex.split(" ")
         V[v] = True
         G[v] = []
     else:
@@ -17,7 +17,7 @@ for i in range(n):
         G[vertex] = []
 
 for i in range(m):
-    u, typ, v = input().split(" ")
+    u, typ, v = input().strip().split(" ")
     if (V[u] and u not in (s,t)) or (V[v] and v not in (s,t)):
         continue
     G[u].append(v)
