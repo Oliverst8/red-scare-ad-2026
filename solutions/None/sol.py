@@ -43,6 +43,6 @@ def bfs(start, end):
                 q.append(v)
             if v == end:
                 return path[end]
-    return None
+    return -1
 
 print(bfs(s, t))
