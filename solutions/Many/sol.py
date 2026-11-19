@@ -73,7 +73,20 @@ def BFS(Adjacency):
     return Number_of_red_on_path[t]
 
 if directed:
-    res = bellman_ford(Dist, Edges)
+    reverse = {v: [] for v in Dist}
+    for u, v, _ in Edges:
+        reverse[v].append(u)
+
+    can_reach_t = {t}
+    stack = [t]
+    while stack:
+        v = stack.pop()
+        for u in reverse[v]:
+            if u not in can_reach_t:
+                can_reach_t.add(u)
+                stack.append(u)
+    relevant_edges = [(u, v, w) for u, v, w in Edges if v in can_reach_t]
+    res = bellman_ford(Dist, relevant_edges)
 else:
     res = BFS(Adjacency)
 
