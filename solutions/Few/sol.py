@@ -48,6 +48,10 @@ while(len(queue) > 0):
     if node == t:
         print(count)
         exit()
+
+    if node in visited:
+        continue
+
     visited.add(node)
 
     for e in G[node]:
