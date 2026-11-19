@@ -142,8 +142,10 @@ int main() {
       node = inp.substr(0, starIndex - 1);
     } else {
       node = inp;
+      node.erase(node.find_last_not_of(' ') + 1);
     }
     convert[node] = c;
+    dbg(convert, node, c);
     isRed[c] = red;
   }
   int s = convert[sIn];
@@ -156,6 +158,8 @@ int main() {
 
   bool directed = true;
 
+  dbg(convert);
+
   for (int c = 0; c < m; c++) {
     cin >> uIn >> edge >> vIn;
     u = convert[uIn];
@@ -167,6 +171,7 @@ int main() {
     }
 
     edges[u][v] = isRed[u] ? -1 : 0;
+    dbg(edges, u, v, uIn, vIn);
   }
 
   if (directed) {
