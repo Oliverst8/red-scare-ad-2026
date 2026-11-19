@@ -3,6 +3,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Sequence
@@ -15,6 +16,7 @@ from typing import Iterable, Sequence
 # python run.py --limit 10
 # python run.py --subset 'n<100'
 # python run.py --subset all --latex-subset 'n>=500'
+# python run.py --timings --timings-file timings.txt
 
 COLUMNS = (
     ("A", "Alternate"),
@@ -35,6 +37,7 @@ class Instance:
 @dataclass(frozen=True)
 class RunResult:
     value: str
+    elapsed: float | None = None
 
 
 def read_instances(data_dir: Path) -> list[Instance]:
@@ -124,6 +127,7 @@ def execute_solution(
 
     try:
         with instance.path.open("r", encoding="utf-8") as infile:
+            started = time.perf_counter()
             result = subprocess.run(
                 command,
                 stdin=infile,
@@ -132,6 +136,7 @@ def execute_solution(
                 timeout=timeout,
                 cwd=str(solutions_dir / folder),
             )
+            elapsed = time.perf_counter() - started
     except subprocess.TimeoutExpired:
         return RunResult("TIMEOUT")
     except OSError as exc:
@@ -140,9 +145,9 @@ def execute_solution(
     if result.returncode != 0:
         detail = result.stderr.strip().splitlines()
         suffix = detail[-1] if detail else f"exit code {result.returncode}"
-        return RunResult(f"ERROR: {suffix}")
+        return RunResult(f"ERROR: {suffix}", elapsed)
 
-    return RunResult(normalize_output(column, result.stdout))
+    return RunResult(normalize_output(column, result.stdout), elapsed)
 
 
 def parse_subset(expression: str):
@@ -193,6 +198,23 @@ def write_tsv(path: Path, rows: Sequence[tuple[Instance, dict[str, RunResult]]])
     for instance, results in rows:
         values = [instance.name, str(instance.n)]
         values.extend(tsv_escape(results[column].value) for column, _ in COLUMNS)
+        lines.append("\t".join(values))
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_timing_tsv(
+    path: Path,
+    rows: Sequence[tuple[Instance, dict[str, RunResult]]],
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    lines = ["instance\tn\tA\tF\tM\tN\tS"]
+    for instance, results in rows:
+        values = [instance.name, str(instance.n)]
+        for column, _ in COLUMNS:
+            elapsed = results[column].elapsed
+            values.append(
+                f"{elapsed:.6f}" if elapsed is not None else "?"
+            )
         lines.append("\t".join(values))
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -304,6 +326,17 @@ def build_parser(project_dir: Path) -> argparse.ArgumentParser:
         action="store_true",
         help="Do not write the complete TSV table",
     )
+    parser.add_argument(
+        "--timings",
+        action="store_true",
+        help="Write a separate table of solution execution times",
+    )
+    parser.add_argument(
+        "--timings-file",
+        type=Path,
+        default=project_dir / "timings.txt",
+        help="Timing table path (default: timings.txt)",
+    )
     return parser
 
 
@@ -367,6 +400,13 @@ def main() -> int:
         write_tsv(args.results, rows)
         print(
             f"Wrote TSV table ({len(rows)} instances): {args.results}",
+            file=sys.stderr,
+        )
+
+    if args.timings:
+        write_timing_tsv(args.timings_file, rows)
+        print(
+            f"Wrote timing table ({len(rows)} instances): {args.timings_file}",
             file=sys.stderr,
         )
 
