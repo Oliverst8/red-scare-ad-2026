@@ -44,10 +44,10 @@ visited = set()
 
 
 while(len(queue) > 0):
-    w, node = heapq.heappop(queue)
-    count = w
+    count, node = heapq.heappop(queue)
     if node == t:
-        break
+        print(count)
+        exit()
     visited.add(node)
 
     for e in G[node]:
@@ -57,4 +57,4 @@ while(len(queue) > 0):
         else:
             heapq.heappush(queue, (w_new + count, node_new))
 
-print(count)
+print(-1)
