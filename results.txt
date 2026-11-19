@@ -1,0 +1,155 @@
+instance	n	A	F	M	N	S
+G-ex	8	true	0	INVALID	3	true
+P3	3	true	1	INVALID	INVALID	true
+bht	5757	false	TIMEOUT	0	ERROR: ValueError: too many values to unpack (expected 2, got 3)	false
+common-1-100	100	false	0	-1	INVALID	false
+common-1-1000	1000	false	0	-1	INVALID	false
+common-1-1500	1500	false	0	-1	INVALID	false
+common-1-20	20	false	0	-1	INVALID	false
+common-1-2000	2000	false	0	-1	INVALID	false
+common-1-250	250	false	0	-1	INVALID	false
+common-1-2500	2500	false	1	INVALID	6	true
+common-1-3000	3000	false	1	INVALID	6	true
+common-1-3500	3500	false	1	INVALID	6	true
+common-1-4000	4000	false	1	INVALID	6	true
+common-1-4500	4500	true	TIMEOUT	INVALID	6	true
+common-1-50	50	false	0	-1	INVALID	false
+common-1-500	500	false	0	-1	INVALID	false
+common-1-5000	5000	true	TIMEOUT	INVALID	6	true
+common-1-5757	5757	true	TIMEOUT	INVALID	6	true
+common-2-100	100	false	0	-1	INVALID	false
+common-2-1000	1000	true	TIMEOUT	INVALID	4	true
+common-2-1500	1500	true	TIMEOUT	INVALID	4	true
+common-2-20	20	false	0	-1	INVALID	false
+common-2-2000	2000	true	TIMEOUT	INVALID	4	true
+common-2-250	250	false	4	INVALID	INVALID	false
+common-2-2500	2500	true	TIMEOUT	INVALID	4	true
+common-2-3000	3000	true	TIMEOUT	INVALID	4	true
+common-2-3500	3500	true	TIMEOUT	INVALID	4	true
+common-2-4000	4000	true	TIMEOUT	INVALID	4	true
+common-2-4500	4500	true	TIMEOUT	INVALID	4	true
+common-2-50	50	false	0	-1	INVALID	false
+common-2-500	500	true	1	INVALID	4	true
+common-2-5000	5000	true	TIMEOUT	INVALID	4	true
+common-2-5757	5757	true	TIMEOUT	INVALID	4	true
+dodecahedron	20	false	2	INVALID	1	true
+gnm-10-15-0	10	false	0	INVALID	1	true
+gnm-10-15-1	10	true	1	INVALID	1	true
+gnm-10-20-0	10	false	1	INVALID	3	true
+gnm-10-20-1	10	true	2	INVALID	3	true
+gnm-1000-1500-0	1000	false	1	INVALID	INVALID	true
+gnm-1000-1500-1	1000	false	2	INVALID	INVALID	true
+gnm-1000-2000-0	1000	false	0	INVALID	7	true
+gnm-1000-2000-1	1000	false	2	INVALID	INVALID	true
+gnm-2000-3000-0	2000	false	0	INVALID	8	true
+gnm-2000-3000-1	2000	true	2	INVALID	INVALID	true
+gnm-2000-4000-0	2000	false	0	INVALID	6	true
+gnm-2000-4000-1	2000	false	0	INVALID	5	true
+gnm-3000-4500-0	3000	false	0	INVALID	10	true
+gnm-3000-4500-1	3000	false	2	INVALID	INVALID	true
+gnm-3000-6000-0	3000	false	0	INVALID	6	true
+gnm-3000-6000-1	3000	false	2	INVALID	6	true
+gnm-4000-6000-0	4000	false	0	INVALID	7	true
+gnm-4000-6000-1	4000	false	1	INVALID	15	true
+gnm-4000-8000-0	4000	false	0	INVALID	5	true
+gnm-4000-8000-1	4000	true	2	INVALID	6	true
+gnm-5000-10000-0	5000	false	2	INVALID	5	true
+gnm-5000-10000-1	5000	true	1	INVALID	5	true
+gnm-5000-7500-0	5000	false	0	-1	INVALID	false
+gnm-5000-7500-1	5000	false	3	INVALID	INVALID	false
+grid-10-0	100	false	0	INVALID	49	true
+grid-10-1	100	false	0	INVALID	29	true
+grid-10-2	100	true	2	INVALID	INVALID	true
+grid-25-0	625	true	0	INVALID	324	true
+grid-25-1	625	true	0	INVALID	123	true
+grid-25-2	625	true	5	INVALID	INVALID	true
+grid-5-0	25	true	0	INVALID	14	true
+grid-5-1	25	true	0	INVALID	8	true
+grid-5-2	25	true	1	INVALID	INVALID	true
+grid-50-0	2500	false	0	INVALID	1249	true
+grid-50-1	2500	false	0	INVALID	521	true
+grid-50-2	2500	false	11	INVALID	INVALID	true
+increase-n10-1	10	true	1	INVALID	ERROR: KeyError: '6'	INVALID
+increase-n10-2	10	false	2	INVALID	ERROR: KeyError: '8'	INVALID
+increase-n10-3	10	false	1	INVALID	ERROR: KeyError: '14'	INVALID
+increase-n100-1	100	true	2	INVALID	ERROR: KeyError: '98'	INVALID
+increase-n100-2	100	false	2	INVALID	ERROR: KeyError: '10'	INVALID
+increase-n100-3	100	false	3	INVALID	ERROR: KeyError: '186'	INVALID
+increase-n20-1	20	false	3	INVALID	ERROR: KeyError: '34'	INVALID
+increase-n20-2	20	false	1	INVALID	ERROR: KeyError: '30'	INVALID
+increase-n20-3	20	true	2	INVALID	ERROR: KeyError: '10'	INVALID
+increase-n50-1	50	false	3	INVALID	ERROR: KeyError: '30'	INVALID
+increase-n50-2	50	true	1	INVALID	ERROR: KeyError: '32'	INVALID
+increase-n50-3	50	true	1	INVALID	ERROR: KeyError: '20'	INVALID
+increase-n500-1	500	false	TIMEOUT	INVALID	ERROR: KeyError: '406'	INVALID
+increase-n500-2	500	true	TIMEOUT	INVALID	ERROR: KeyError: '356'	INVALID
+increase-n500-3	500	true	TIMEOUT	INVALID	ERROR: KeyError: '98'	INVALID
+increase-n8-1	8	true	1	INVALID	ERROR: KeyError: '2'	INVALID
+increase-n8-2	8	false	1	INVALID	ERROR: KeyError: '12'	INVALID
+increase-n8-3	8	true	0	INVALID	ERROR: KeyError: '8'	INVALID
+rusty-1-17	17	false	0	INVALID	10	true
+rusty-1-2000	2000	false	0	-1	INVALID	false
+rusty-1-2500	2500	false	0	-1	INVALID	false
+rusty-1-3000	3000	false	0	INVALID	14	true
+rusty-1-3500	3500	false	0	INVALID	14	true
+rusty-1-4000	4000	false	0	INVALID	13	true
+rusty-1-4500	4500	false	0	INVALID	7	true
+rusty-1-5000	5000	false	0	INVALID	7	true
+rusty-1-5757	5757	false	0	INVALID	7	true
+rusty-2-2000	2000	false	TIMEOUT	INVALID	5	true
+rusty-2-2500	2500	false	TIMEOUT	INVALID	4	true
+rusty-2-3000	3000	false	TIMEOUT	INVALID	4	true
+rusty-2-3500	3500	false	TIMEOUT	INVALID	4	true
+rusty-2-4000	4000	false	TIMEOUT	INVALID	4	true
+rusty-2-4500	4500	false	TIMEOUT	INVALID	4	true
+rusty-2-5000	5000	false	TIMEOUT	INVALID	4	true
+rusty-2-5757	5757	false	TIMEOUT	INVALID	4	true
+ski-illustration	36	true	0	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level10-1	79	true	0	INVALID	ERROR: KeyError: '2'	INVALID
+ski-level10-2	76	true	1	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level10-3	77	true	4	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level20-1	252	true	3	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level20-2	253	true	9	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level20-3	254	true	0	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level3-1	16	false	1	INVALID	ERROR: KeyError: '1'	INVALID
+ski-level3-2	14	true	0	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level3-3	15	true	0	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level5-1	29	true	1	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level5-2	26	true	1	INVALID	ERROR: KeyError: '0'	INVALID
+ski-level5-3	27	false	0	0	ERROR: KeyError: '0'	false
+smallworld-10-0	100	false	0	INVALID	6	true
+smallworld-10-1	100	true	0	INVALID	8	true
+smallworld-20-0	400	false	0	INVALID	8	true
+smallworld-20-1	400	true	1	INVALID	14	true
+smallworld-3-0	9	false	1	INVALID	4	true
+smallworld-3-1	9	false	1	INVALID	2	true
+smallworld-30-0	900	false	TIMEOUT	INVALID	9	true
+smallworld-30-1	900	true	1	INVALID	11	true
+smallworld-40-0	1600	false	TIMEOUT	INVALID	8	true
+smallworld-40-1	1600	true	1	INVALID	13	true
+smallworld-50-0	2500	false	TIMEOUT	INVALID	3	true
+smallworld-50-1	2500	true	2	INVALID	INVALID	true
+wall-n-1	8	false	0	INVALID	1	true
+wall-n-10	80	false	0	INVALID	1	false
+wall-n-100	800	false	0	INVALID	1	false
+wall-n-1000	8000	false	0	INVALID	1	false
+wall-n-10000	80000	false	0	INVALID	1	false
+wall-n-2	16	false	0	INVALID	1	false
+wall-n-3	24	false	0	INVALID	1	false
+wall-n-4	32	false	0	INVALID	1	false
+wall-p-1	8	false	0	INVALID	1	true
+wall-p-10	62	false	0	INVALID	1	true
+wall-p-100	602	false	0	INVALID	1	true
+wall-p-1000	6002	false	0	INVALID	1	true
+wall-p-10000	60002	false	0	INVALID	1	true
+wall-p-2	14	false	0	INVALID	1	true
+wall-p-3	20	false	0	INVALID	1	true
+wall-p-4	26	false	0	INVALID	1	true
+wall-z-1	8	false	0	INVALID	1	true
+wall-z-10	71	false	0	INVALID	1	false
+wall-z-100	701	false	0	INVALID	1	false
+wall-z-1000	7001	false	0	INVALID	1	false
+wall-z-10000	70001	false	0	INVALID	1	false
+wall-z-2	15	false	0	INVALID	1	false
+wall-z-3	22	false	0	INVALID	1	false
+wall-z-4	29	false	0	INVALID	1	false
