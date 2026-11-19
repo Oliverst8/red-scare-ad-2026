@@ -1,7 +1,7 @@
 ﻿from collections import deque
 
-n, m, _ = map(int, input().split())
-s, t = input().split()
+n, m, _ = map(int, input().strip().split())
+s, t = input().strip().split()
 
 R = set()
 Edges = []
@@ -12,7 +12,7 @@ Adjacency = {}
 directed = False
 
 for i in range(n):
-    vertex = input()
+    vertex = input().strip()
     if "*" in vertex:
         v, _ = vertex.split(" ")
         R.add(v)
@@ -23,7 +23,7 @@ for i in range(n):
         Adjacency[vertex] = []
 
 for i in range(m):
-    u, typ, v = input().split(" ")
+    u, typ, v = input().strip().split(" ")
     if typ == "->":
         directed = True
         if v in R:

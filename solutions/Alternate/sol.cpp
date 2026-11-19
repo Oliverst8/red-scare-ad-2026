@@ -34,6 +34,7 @@ int main() {
 			node = inp.substr(0, starIndex - 1);
 		} else {
 			node = inp;
+			node.erase(node.find_last_not_of(' ') + 1);
 		}
 		convert[node] = c;
 		isRed[c] = red;
